@@ -6,7 +6,7 @@ function Girl(){
 }
 // __proto__ -> new EventEmitter().__proto__->EventEmitter.prototype
 util.inherits(Girl,EventEmitter);
-Girl.prototype = new EventEmitter();
+//Girl.prototype = new EventEmitter();
 var girl = new Girl();
 var callback = function(){
     console.log('吃饭去吧');

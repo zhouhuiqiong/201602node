@@ -38,28 +38,16 @@
        //2. 初始化
        xhr.open('POST','/ajax',true);
        //设置请求头中的内容类型
-     /*  xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');*/
        xhr.setRequestHeader('Content-Type','application/json');
        //3.注册回调监听 1
        xhr.responseType = 'json';
        xhr.onreadystatechange = function(){
            if(xhr.readyState == 4){
-              /* console.log(xhr.status,xhr.statusText);
-               console.log(xhr.responseText);
-               console.log(xhr.getAllResponseHeaders());
-               console.log(xhr.getResponseHeader('content-type'));
-               var contentType = xhr.getResponseHeader('content-type');
-               if(contentType == 'application/json'){
-                   var j = JSON.parse(xhr.responseText);
-                    //console.log(j.username);
-                   document.querySelector('#username').innerHTML = j.username;
-               }*/
                document.querySelector('#username').innerHTML = xhr.responseText;
                //xhr.abort();//强行退出
            }
        }
        //4. 发送数据，真正向后台发请求 现在没有请求体
-     /*  xhr.send(stringify(document.querySelector('#form')));*/
        xhr.send(jsonify(document.querySelector('#form')));
    }
 
